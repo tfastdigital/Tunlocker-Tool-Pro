@@ -33,3 +33,4 @@ Properties/Resources.resources
 
 # Packaging / release outputs
 dist/
+*.zip

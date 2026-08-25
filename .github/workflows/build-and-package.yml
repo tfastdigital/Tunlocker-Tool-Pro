@@ -70,6 +70,5 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            TunlockerToolPro-*.zip
             packages/*.nupkg
           generate_release_notes: true

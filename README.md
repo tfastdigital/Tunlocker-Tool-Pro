@@ -30,18 +30,21 @@ This project is published **for educational and research purposes only**. It exi
 
 1. [What Is This Project?](#-what-is-this-project)
 2. [Official Links & Community](#-official-links--community)
-3. [Features](#-features)
-4. [Supported Chipsets & Brands](#-supported-chipsets--brands)
-5. [Architecture Overview](#-architecture-overview)
-6. [Project Structure](#-project-structure)
-7. [Getting Started (Build & Run)](#-getting-started-build--run)
-8. [Packaging & Releases](#-packaging--releases)
-9. [How to Learn from This Codebase](#-how-to-learn-from-this-codebase)
-10. [Learning Resources](#-learning-resources)
-11. [Roadmap](#-roadmap)
-12. [Contributing](#-contributing)
-13. [Credits & Attribution](#-credits--attribution)
-14. [License](#-license)
+3. [Download (Ready-to-Run EXE)](#-download-ready-to-run-exe)
+4. [Login & Accounts](#-login--accounts)
+5. [Features](#-features)
+6. [Supported Chipsets & Brands](#-supported-chipsets--brands)
+7. [Architecture Overview](#-architecture-overview)
+8. [Project Structure](#-project-structure)
+9. [Getting Started (Build & Run)](#-getting-started-build--run)
+10. [Packaging & Releases](#-packaging--releases)
+11. [Backend & API Guide](#-backend--api-guide)
+12. [How to Learn from This Codebase](#-how-to-learn-from-this-codebase)
+13. [Learning Resources](#-learning-resources)
+14. [Roadmap](#-roadmap)
+15. [Contributing](#-contributing)
+16. [Credits & Attribution](#-credits--attribution)
+17. [License](#-license)
 
 ---
 
@@ -70,6 +73,42 @@ Stay connected with **Tfast Digital Agency** — updates, support, and community
 | ▶️ YouTube | [@TfastDigital](https://www.youtube.com/@TfastDigital) |
 | 🎵 TikTok | [@tfasthub](https://www.tiktok.com/@tfasthub) |
 | 💬 WhatsApp | [+256 751 399 620](https://wa.me/256751399620) |
+
+---
+
+## ⬇️ Download (Ready-to-Run EXE)
+
+Don't want to build from source? Grab the pre-built portable package from the [Releases](https://github.com/tfastdigital/Tunlocker-Tool-Pro/releases) page:
+
+1. Download **`TunlockerToolPro-v2.0.0-win-x64.zip`**
+2. Extract it anywhere — **no installation required**
+3. Run `Tunlocker Tool.exe`
+4. Log in with your licensed account (see [Login & Accounts](#-login--accounts))
+
+> ⚠️ **Windows Defender / SmartScreen warning:** phone-service tools are commonly flagged as PUP/PUA. If the download or the EXE is blocked, add the extracted folder to Defender exclusions. The file is **not code-signed**.
+
+---
+
+## 🔐 Login & Accounts
+
+The tool is **account-based**: operations are gated by a credit/token license issued by the official server.
+
+**How login works** (implemented in `motoulocked/Login.cs`):
+
+1. Enter your **username (email) + password** on the login screen.
+2. The client encrypts the request and POSTs it to `https://api.tfastdigital.com/api/server` → `loginapi/`.
+3. The server replies with your license profile: activation state, credit balance, license type (`CREDIT LICENSE` or annual), validity dates, device/function restrictions, and a session token.
+4. The client verifies the anti-tamper nonce and unlocks exactly the operations your license allows.
+
+**Where to get an account:**
+
+| Option | Link |
+| --- | --- |
+| 🌍 Official panel | [panel.tfastdigital.com](https://panel.tfastdigital.com/OperationTools/Index) |
+| ✈️ Telegram | [t.me/tfasthub](https://t.me/tfasthub) |
+| 💬 WhatsApp | [+256 751 399 620](https://wa.me/256751399620) |
+
+> ℹ️ There is **no built-in demo account** in the source — licenses are issued by Tfast Digital Agency. Developers who want full control can deploy their own backend instead (see [Backend & API Guide](#-backend--api-guide)).
 
 ---
 
@@ -255,6 +294,24 @@ git push origin v2.0.0
 **Repository:** https://github.com/tfastdigital/Tunlocker-Tool-Pro — the workflow, NuGet metadata, and links above already point at this location; no manual edits are needed.
 
 > ⚠️ **Heads-up:** the generated `nupkg` and `zip` include the third-party binaries from `Res\` (Guna.UI2, FireSharp, libcurl, libeay32). Review redistribution rights for each before publishing, and consider swapping them for documented download links (see [Roadmap](#-roadmap)).
+
+---
+
+## 🛠️ Backend & API Guide
+
+Want to run your own server, or understand how the licensing API and Firebase services work? The complete walkthrough — encrypted protocol envelope, endpoint reference, data models, Firebase setup, and a minimal self-hosted API implementation — lives in:
+
+📄 **[`docs/BACKEND_GUIDE.md`](docs/BACKEND_GUIDE.md)**
+
+Quick facts:
+
+| Piece | Value |
+| --- | --- |
+| API base URL | `https://api.tfastdigital.com/api/server` |
+| Endpoints | `loginapi/`, `Balancepdate/`, `ban/`, `svcrtfile/`, `getcrtfile/`, `info2/`, `info1val2/`, `infovar2/`, `Optionapi/` |
+| Messages DB (Firebase RTDB) | `data-unlock-api-messgas-default-rtdb.firebaseio.com` |
+| Payloads (Firebase Storage) | `motounlock-7d7d0.appspot.com` |
+| Admin panel | `panel.tfastdigital.com` |
 
 ---
 
