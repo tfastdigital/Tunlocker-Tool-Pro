@@ -1,0 +1,75 @@
+name: Build & Package
+
+on:
+  push:
+    branches: [ main, master ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  build-and-package:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore "Tunlocker Tool.sln"
+
+      - name: Build (Release)
+        run: dotnet build "Tunlocker Tool.sln" -c Release --no-restore
+
+      - name: Stage runnable files
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path dist | Out-Null
+          Copy-Item "bin\Release\net472\*.exe" -Destination dist -Force
+          Copy-Item "bin\Release\net472\*.dll" -Destination dist -Force
+          Copy-Item "bin\Release\net472\*.config" -Destination dist -Force -ErrorAction SilentlyContinue
+
+      - name: Create release ZIP
+        shell: pwsh
+        run: |
+          Compress-Archive -Path "dist\*" -DestinationPath "DataUnlocker-${{ github.ref_name }}-win-x64.zip" -Force
+
+      - name: Pack NuGet package
+        run: dotnet pack "Tunlocker Tool.csproj" -c Release --no-build -o packages
+
+      - name: Push NuGet package to GitHub Packages
+        if: startsWith(github.ref, 'refs/tags/v')
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          dotnet nuget push "packages\*.nupkg" `
+            --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" `
+            --api-key $env:GITHUB_TOKEN --skip-duplicate
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: DataUnlocker-${{ github.ref_name }}
+          path: |
+            dist/**
+            packages/*.nupkg
+
+      - name: Publish GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            DataUnlocker-*.zip
+            packages/*.nupkg
+          generate_release_notes: true

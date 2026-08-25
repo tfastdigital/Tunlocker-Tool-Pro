@@ -1,0 +1,91 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>Tunlocker Tool</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>WinExe</OutputType>
+    <UseWindowsForms>True</UseWindowsForms>
+    <TargetFramework>net472</TargetFramework>
+    <Prefer32Bit>False</Prefer32Bit>
+  </PropertyGroup>
+  <!-- NuGet / GitHub Packages metadata -->
+  <PropertyGroup>
+    <PackageId>DataUnlocker</PackageId>
+    <Version>1.4.7</Version>
+    <Authors>Data Unlocker contributors</Authors>
+    <Description>Educational multi-brand Android service tool for Windows: MediaTek, Qualcomm EDL, Samsung Odin, Spreadtrum, Huawei Kirin, ADB/Fastboot automation, FRP removal and firmware flashing. WinForms / .NET Framework 4.7.2.</Description>
+    <PackageTags>android;flasher;mtk;mediatek;qualcomm;edl;samsung;odin;spreadtrum;huawei;kirin;frp;imei;adb;fastboot;winforms;dotnet;educational</PackageTags>
+    <RepositoryUrl>https://github.com/tfastdigital/Data-Unlocker.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/tfastdigital/Data-Unlocker</PackageProjectUrl>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>10.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <Deterministic>true</Deterministic>
+    <PathMap>$(MSBuildProjectDirectory)=Tunlocker</PathMap>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <RootNamespace />
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="motoulocked.Newtonsoft.Json.dll" />
+    <EmbeddedResource Include="motoulocked.Newtonsoft.Json.dll" LogicalName="motoulocked.Newtonsoft.Json.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="FireSharp">
+      <HintPath>Res\FireSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="libcurl">
+      <HintPath>Res\libcurl.dll</HintPath>
+    </Reference>
+    <Reference Include="libeay32">
+      <HintPath>Res\libeay32.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Resources.Extensions" />
+    <Reference Include="Guna.UI2">
+      <HintPath>Res\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="motoulocked.Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>motoulocked.Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="motoulocked.Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>motoulocked.Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+</Project>

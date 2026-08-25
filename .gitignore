@@ -1,0 +1,32 @@
+# Build outputs
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# NuGet
+packages/
+*.nupkg
+project.assets.json
+
+# Debug / logs
+*.log
+*.pdb
+
+# Compiled binaries (build outputs only — bin/ and obj/ are already ignored)
+*.exe
+*.dll
+
+# Third-party binaries REQUIRED to build the project (keep these!)
+!Res/*.dll
+!motoulocked.Newtonsoft.Json.dll
+
+# Packaging / release outputs
+dist/
