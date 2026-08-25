@@ -80,7 +80,7 @@ Stay connected with **Tfast Digital Agency** — updates, support, and community
 
 Don't want to build from source? Grab the pre-built portable package from the [Releases](https://github.com/tfastdigital/Tunlocker-Tool-Pro/releases) page:
 
-1. Download **`TunlockerToolPro-v2.0.0-win-x64.zip`**
+1. Download [**`TunlockerToolPro-v2.0.0-win-x64.zip`**](https://github.com/tfastdigital/Tunlocker-Tool-Pro/releases/download/v2.0.0/TunlockerToolPro-v2.0.0-win-x64.zip) — or browse all versions on the [Releases](https://github.com/tfastdigital/Tunlocker-Tool-Pro/releases) page
 2. Extract it anywhere — **no installation required**
 3. Run `Tunlocker Tool.exe`
 4. Log in with your licensed account (see [Login & Accounts](#-login--accounts))
