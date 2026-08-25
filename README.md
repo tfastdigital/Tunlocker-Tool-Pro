@@ -29,18 +29,19 @@ This project is published **for educational and research purposes only**. It exi
 ## 📑 Table of Contents
 
 1. [What Is This Project?](#-what-is-this-project)
-2. [Features](#-features)
-3. [Supported Chipsets & Brands](#-supported-chipsets--brands)
-4. [Architecture Overview](#-architecture-overview)
-5. [Project Structure](#-project-structure)
-6. [Getting Started (Build & Run)](#-getting-started-build--run)
-7. [Packaging & Releases](#-packaging--releases)
-8. [How to Learn from This Codebase](#-how-to-learn-from-this-codebase)
-9. [Learning Resources](#-learning-resources)
-10. [Roadmap](#-roadmap)
-11. [Contributing](#-contributing)
-12. [Credits & Attribution](#-credits--attribution)
-13. [License](#-license)
+2. [Official Links & Community](#-official-links--community)
+3. [Features](#-features)
+4. [Supported Chipsets & Brands](#-supported-chipsets--brands)
+5. [Architecture Overview](#-architecture-overview)
+6. [Project Structure](#-project-structure)
+7. [Getting Started (Build & Run)](#-getting-started-build--run)
+8. [Packaging & Releases](#-packaging--releases)
+9. [How to Learn from This Codebase](#-how-to-learn-from-this-codebase)
+10. [Learning Resources](#-learning-resources)
+11. [Roadmap](#-roadmap)
+12. [Contributing](#-contributing)
+13. [Credits & Attribution](#-credits--attribution)
+14. [License](#-license)
 
 ---
 
@@ -55,6 +56,20 @@ This project is published **for educational and research purposes only**. It exi
 - Switching devices between modes (preloader, BROM, EDL, Fastboot, ADB).
 
 The entire codebase is a **case study in real-world engineering**: raw USB communication, serial-port handling, cryptographic signing, filesystem parsing, async task pipelines, and a multi-layer UI — all in C#.
+
+---
+
+## 🌐 Official Links & Community
+
+Stay connected with **Tfast Digital Agency** — updates, support, and community:
+
+| Channel | Link |
+| --- | --- |
+| 🌍 Website | [tfastdigital.com](https://tfastdigital.com/) |
+| ✈️ Telegram | [t.me/tfasthub](https://t.me/tfasthub) |
+| ▶️ YouTube | [@TfastDigital](https://www.youtube.com/@TfastDigital) |
+| 🎵 TikTok | [@tfasthub](https://www.tiktok.com/@tfasthub) |
+| 💬 WhatsApp | [+256 751 399 620](https://wa.me/256751399620) |
 
 ---
 
