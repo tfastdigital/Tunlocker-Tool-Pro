@@ -18,7 +18,12 @@ Extract the zip anywhere, run `Tunlocker Tool.exe` and log in. No installation n
 
 Login takes the username (email) and password of your licensed account. The client encrypts the request and sends it to `https://api.tfastdigital.com/api/server` (`loginapi/`). The server answers with your license state: credit balance, license type (`CREDIT LICENSE` or annual), expiry dates, and any model or function restrictions.
 
-There is no demo account in the source. Accounts are issued by Tfast Digital Agency:
+Demo login for testing:
+
+- Username: info@tfastdigital.com
+- Password: tfastdigital
+
+More accounts are issued by Tfast Digital Agency:
 
 - Panel: https://panel.tfastdigital.com/OperationTools/Index
 - Telegram: https://t.me/tfasthub
