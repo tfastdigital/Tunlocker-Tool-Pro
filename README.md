@@ -98,6 +98,7 @@ The request encryption, the login handshake, the data models, and a guide to run
 
 ## Documentation
 
+- [docs/FEATURES.md](docs/FEATURES.md): every feature, how it works, which files implement it
 - [docs/WORKFLOW.md](docs/WORKFLOW.md): what happens when the tool runs, end to end
 - [docs/LEARNING_PATH.md](docs/LEARNING_PATH.md): study plan for the codebase, beginner to shipping a change
 - [docs/BACKEND_GUIDE.md](docs/BACKEND_GUIDE.md): server API, request encryption, Firebase, self hosting
