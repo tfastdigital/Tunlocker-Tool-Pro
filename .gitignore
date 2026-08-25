@@ -28,5 +28,8 @@ project.assets.json
 !Res/*.dll
 !motoulocked.Newtonsoft.Json.dll
 
+# Pre-serialized resource output (regenerated at build time)
+Properties/Resources.resources
+
 # Packaging / release outputs
 dist/
