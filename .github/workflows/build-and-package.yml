@@ -42,7 +42,7 @@ jobs:
       - name: Create release ZIP
         shell: pwsh
         run: |
-          Compress-Archive -Path "dist\*" -DestinationPath "DataUnlocker-${{ github.ref_name }}-win-x64.zip" -Force
+          Compress-Archive -Path "dist\*" -DestinationPath "TunlockerToolPro-${{ github.ref_name }}-win-x64.zip" -Force
 
       - name: Pack NuGet package
         run: dotnet pack "Tunlocker Tool.csproj" -c Release --no-build -o packages
@@ -60,7 +60,7 @@ jobs:
       - name: Upload workflow artifact
         uses: actions/upload-artifact@v4
         with:
-          name: DataUnlocker-${{ github.ref_name }}
+          name: TunlockerToolPro-${{ github.ref_name }}
           path: |
             dist/**
             packages/*.nupkg
@@ -70,6 +70,6 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            DataUnlocker-*.zip
+            TunlockerToolPro-*.zip
             packages/*.nupkg
           generate_release_notes: true

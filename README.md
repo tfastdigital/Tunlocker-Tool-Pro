@@ -1,4 +1,4 @@
-# Data Unlocker — Open-Source Android Service Tool (WinForms / .NET)
+# Tunlocker Tool Pro — Open-Source Android Service Tool (WinForms / .NET)
 
 **A complete, readable reference implementation of a multi-brand Android service & firmware tool for Windows — built with C# / WinForms on .NET Framework 4.7.2.**
 
@@ -8,7 +8,7 @@
 ![UI](https://img.shields.io/badge/UI-WinForms%20%2B%20Guna.UI2-9b59b6)
 ![Status](https://img.shields.io/badge/Status-Educational%20Reference-yellow)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![Build & Package](https://github.com/tfastdigital/Data-Unlocker/actions/workflows/build-and-package.yml/badge.svg)
+![Build & Package](https://github.com/tfastdigital/Tunlocker-Tool-Pro/actions/workflows/build-and-package.yml/badge.svg)
 
 > **TL;DR** — This repository is a deep dive into how professional Android service tools are engineered: low-level USB protocols (MediaTek BROM / preloader, Samsung Odin, Spreadtrum, Qualcomm EDL, Huawei Kirin), ADB / Fastboot automation, partition parsing, Ext4 filesystem operations, AES signing, and a credit-based licensing backend. If you want to learn how to build tools like this, this is the place to start.
 
@@ -20,7 +20,7 @@ This project is published **for educational and research purposes only**. It exi
 
 - ✅ **Permitted use:** your own devices, devices you are legally authorized to service, or research in a controlled environment.
 - ❌ **Prohibited use:** unlocking, flashing, or modifying devices you do not own or lack authorization for, bypassing theft protection (FRP) on stolen property, or any activity that violates local law or device manufacturer terms.
-- 🔗 **Attribution:** parts of this codebase are a decompiled/cleaned study of the original *Tunlocker Tool* (© Tfast Digital Agency — https://tfastdigital.com/). All trademarks belong to their respective owners. If you own rights to any included code and want it removed, open an issue.
+- 🔗 **Attribution:** *Tunlocker Tool Pro* is © Tfast Digital Agency — https://tfastdigital.com/. All trademarks belong to their respective owners. If you own rights to any included code and want it removed, open an issue.
 
 **By using or building this software you accept full responsibility for your actions.**
 
@@ -46,7 +46,7 @@ This project is published **for educational and research purposes only**. It exi
 
 ## 🔍 What Is This Project?
 
-**Data Unlocker** is a Windows desktop application in the same family as MTK Auth Bypass, SP Flash Tool, Odin, and the original Tunlocker Tool. It communicates directly with Android devices over USB at the *protocol level* — no Android app is required — to perform service operations such as:
+**Tunlocker Tool Pro** is a Windows desktop application in the same family as MTK Auth Bypass, SP Flash Tool, and Odin. It communicates directly with Android devices over USB at the *protocol level* — no Android app is required — to perform service operations such as:
 
 - Reading/writing device partitions and firmware images,
 - Removing Factory Reset Protection (FRP) locks,
@@ -131,7 +131,7 @@ flowchart TB
 ## 📂 Project Structure
 
 ```
-Data Unlocker/
+Tunlocker-Tool-Pro/
 ├── Tunlocker Tool.sln / .csproj     # SDK-style project, net472, WinForms (AnyCPU)
 ├── motoulocked/                     # main application code
 │   ├── Form1.cs                     # main dashboard (~34k lines — orchestration hub)
@@ -190,8 +190,8 @@ Data Unlocker/
 ### Build
 
 ```bash
-git clone https://github.com/tfastdigital/Data-Unlocker.git
-cd "Data-Unlocker"
+git clone https://github.com/tfastdigital/Tunlocker-Tool-Pro.git
+cd "Tunlocker-Tool-Pro"
 dotnet build "Tunlocker Tool.sln" -c Debug
 ```
 
@@ -201,7 +201,7 @@ Or open `Tunlocker Tool.sln` in **Visual Studio 2022** and press `F5`.
 
 ### Known Build Notes
 
-- The build emits a large number of warnings — this is normal for decompiled code; there are **0 errors**.
+- The build emits a large number of warnings — this is normal for this codebase; there are **0 errors**.
 - **Windows Defender may flag the output as a PUP** (phone-service tools are commonly false-positived). Add a folder exclusion for your `bin\` directory if you need to run it.
 - The project is **not code-signed**. Run at your own discretion.
 
@@ -219,7 +219,7 @@ The project file carries full NuGet metadata (`PackageId`, `Version`, `PackageTa
 dotnet pack "Tunlocker Tool.csproj" -c Release -o packages
 ```
 
-This produces `packages/DataUnlocker.1.4.7.nupkg`.
+This produces `packages/TunlockerToolPro.2.0.0.nupkg`.
 
 ### 2. Ready-to-run Release ZIP (GitHub Actions)
 
@@ -228,16 +228,16 @@ The included workflow [`.github/workflows/build-and-package.yml`](.github/workfl
 | Trigger | What happens |
 | --- | --- |
 | `push` / `pull_request` | Builds `Release`, stages a runnable folder, uploads it as a workflow artifact |
-| Tag push (e.g. `v1.4.7`) | Additionally pushes the `.nupkg` to **GitHub Packages** and publishes a **GitHub Release** with auto-generated release notes |
+| Tag push (e.g. `v2.0.0`) | Additionally pushes the `.nupkg` to **GitHub Packages** and publishes a **GitHub Release** with auto-generated release notes |
 
 **To publish a release:**
 
 ```bash
-git tag v1.4.7
-git push origin v1.4.7
+git tag v2.0.0
+git push origin v2.0.0
 ```
 
-**Repository:** https://github.com/tfastdigital/Data-Unlocker — the workflow, NuGet metadata, and links above already point at this location; no manual edits are needed.
+**Repository:** https://github.com/tfastdigital/Tunlocker-Tool-Pro — the workflow, NuGet metadata, and links above already point at this location; no manual edits are needed.
 
 > ⚠️ **Heads-up:** the generated `nupkg` and `zip` include the third-party binaries from `Res\` (Guna.UI2, FireSharp, libcurl, libeay32). Review redistribution rights for each before publishing, and consider swapping them for documented download links (see [Roadmap](#-roadmap)).
 
@@ -323,7 +323,7 @@ Contributions are welcome — especially documentation, tests, and refactoring.
 
 ## 🏆 Credits & Attribution
 
-- Original **Tunlocker Tool** by *Tfast Digital Agency* (https://tfastdigital.com/) — this repository is a cleaned, educational re-study of that codebase.
+- **Tunlocker Tool Pro** by *Tfast Digital Agency* (https://tfastdigital.com/) — the official source release of the tool, published for transparency and education.
 - [mtkclient](https://github.com/bkerler/mtkclient) by B. Kerler — the MediaTek protocol reference.
 - [HZHControls](https://github.com/kwwwvagaa/NetWinformControl) — open-source UI controls.
 - [Guna.UI2](https://gunaframework.com/) — UI framework.
@@ -332,7 +332,7 @@ Contributions are welcome — especially documentation, tests, and refactoring.
 
 ## 📄 License
 
-Released under the **MIT License** for the parts authored in this repository. Third-party libraries and original decompiled code retain their original licenses — see `Credits & Attribution` above. Use responsibly.
+Released under the **MIT License**. Third-party libraries retain their original licenses — see `Credits & Attribution` above. Use responsibly.
 
 ---
 

@@ -17894,7 +17894,7 @@ public class Form1 : Form
 			SerialCOM.process.StandardInput.WriteLine(String_73 + "adb.exe shell /data/local/tmp/1");
 			Thread.Sleep(500);
 			ProgressBar1.Text = ClassDevronix.GA2;
-			SerialCOM.process.StandardInput.WriteLine("Data-Unlocker-Tool-Auth");
+			SerialCOM.process.StandardInput.WriteLine("Tunlocker-Tool-Pro-Auth");
 			Thread.Sleep(500);
 			SerialCOM.process.StandardInput.WriteLine("AT+ETMOSLB=9,58,\"000100050102005A00043102600031031000310300000010100000000000000000000000000000000000" + IMEI_ID.Text + "30\"");
 			Thread.Sleep(500);
@@ -33593,7 +33593,7 @@ public class Form1 : Form
             this.Name = "Form1";
             this.Padding = new System.Windows.Forms.Padding(3, 64, 3, 3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tunlocker Tool V2.0  •  Built by Tfast Digital Agency (tfastdigital.com)";
+            this.Text = "Tunlocker Tool Pro V2.0  •  Built by Tfast Digital Agency (tfastdigital.com)";
             this.Panel_home.ResumeLayout(false);
             this.Guna2GroupBox4.ResumeLayout(false);
             this.Guna2GroupBox11.ResumeLayout(false);
