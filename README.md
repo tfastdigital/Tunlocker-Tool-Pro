@@ -91,6 +91,16 @@ The tool talks to `https://api.tfastdigital.com/api/server`. Endpoints: `loginap
 
 The request encryption, the login handshake, the data models, and a guide to running your own server are in [docs/BACKEND_GUIDE.md](docs/BACKEND_GUIDE.md).
 
+## Documentation
+
+- [docs/WORKFLOW.md](docs/WORKFLOW.md): what happens when the tool runs, end to end
+- [docs/LEARNING_PATH.md](docs/LEARNING_PATH.md): study plan for the codebase, beginner to shipping a change
+- [docs/BACKEND_GUIDE.md](docs/BACKEND_GUIDE.md): server API, request encryption, Firebase, self hosting
+- [docs/RESOURCES.md](docs/RESOURCES.md): links, specs, books, communities
+- [docs/STARTUP_GUIDE.md](docs/STARTUP_GUIDE.md): the business side, licensing, hosting, support
+
+Also in the repo root: [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) and [SECURITY.md](SECURITY.md).
+
 ## Links
 
 - Website: https://tfastdigital.com/
@@ -109,6 +119,8 @@ The request encryption, the login handshake, the data models, and a guide to run
 - [CRC32 (zlib)](https://www.zlib.net/crc_v3.txt)
 - [AES FIPS-197](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.197.pdf)
 - [Windows Forms documentation](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/)
+
+The full list of references, books and communities is in [docs/RESOURCES.md](docs/RESOURCES.md).
 
 If you are new to the code, open `Form1.cs` and follow one operation (for example "read device info") through `ProcessConnection` down to the USB layer. Then compare `mtkclient2/` with the original Python mtkclient.
 

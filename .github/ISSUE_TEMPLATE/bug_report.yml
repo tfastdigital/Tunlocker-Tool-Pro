@@ -1,0 +1,42 @@
+name: Bug report
+description: Something is broken
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Include as much detail as you can.
+  - type: input
+    id: version
+    attributes:
+      label: Tool version
+      placeholder: "2.0.0"
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device and chipset
+      placeholder: "Samsung A05, MT6765"
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+    validations:
+      required: true
+  - type: textarea
+    id: expect
+    attributes:
+      label: What you expected
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Paste relevant log output. Remove any personal data.

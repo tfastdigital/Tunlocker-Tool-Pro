@@ -1,0 +1,25 @@
+name: Feature request
+description: Suggest something new
+title: "[Feature] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What should the tool do
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is it useful
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - New chipset support
+        - New operation
+        - UI improvement
+        - Documentation
+        - Other
