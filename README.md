@@ -77,7 +77,7 @@ Tunlocker-Tool-Pro/
 │   ├── ProcessConnection.cs      # ADB/fastboot process control
 │   └── Operations/Ext4/          # Ext4 filesystem parser
 ├── Res/                          # third-party DLLs (Guna.UI2, FireSharp, libcurl)
-└── docs/BACKEND_GUIDE.md         # API and backend documentation
+└── docs/                         # protocols, file formats, security, glossary, backend, resources
 ```
 
 ## Packaging
@@ -100,9 +100,15 @@ The request encryption, the login handshake, the data models, and a guide to run
 
 - [docs/FEATURES.md](docs/FEATURES.md): every feature, how it works, which files implement it
 - [docs/WORKFLOW.md](docs/WORKFLOW.md): what happens when the tool runs, end to end
+- [docs/PROTOCOLS.md](docs/PROTOCOLS.md): the wire protocols (Sahara/Firehose, Odin, BROM/DA, ResearchDownload) with state machines
+- [docs/FILE_FORMATS.md](docs/FILE_FORMATS.md): binary data structures (GPT, PIT, PAC, scatter, sparse, seccfg, ext4) with field tables
+- [docs/SECURITY_CONCEPTS.md](docs/SECURITY_CONCEPTS.md): verified boot, FRP, bootloader lock, IMEI — why the locks exist
+- [docs/GLOSSARY.md](docs/GLOSSARY.md): every acronym and term in one place
 - [docs/LEARNING_PATH.md](docs/LEARNING_PATH.md): study plan for the codebase, beginner to shipping a change
+- [docs/LAB_SETUP.md](docs/LAB_SETUP.md): safe practice environment — test phones, drivers, backups, recovering a brick
+- [docs/LEGAL_AND_ETHICS.md](docs/LEGAL_AND_ETHICS.md): authorized use, what's legitimate vs. prohibited, records to keep
 - [docs/BACKEND_GUIDE.md](docs/BACKEND_GUIDE.md): server API, request encryption, Firebase, self hosting
-- [docs/RESOURCES.md](docs/RESOURCES.md): links, specs, books, communities
+- [docs/RESOURCES.md](docs/RESOURCES.md): annotated research references, specs, books, communities
 - [docs/STARTUP_GUIDE.md](docs/STARTUP_GUIDE.md): the business side, licensing, hosting, support
 
 Also in the repo root: [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) and [SECURITY.md](SECURITY.md).
