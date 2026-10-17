@@ -1,0 +1,31 @@
+name: PR security checks
+
+on:
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  repository-hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check for unresolved conflict markers
+        shell: bash
+        run: |
+          if git grep -n -E '^(<<<<<<< |=======|>>>>>>> )' -- ':!*.sln' ':!*.Designer.cs'; then
+            echo 'Unresolved merge conflict markers detected'
+            exit 1
+          fi
+      - name: Check documentation presence
+        shell: bash
+        run: |
+          test -f README.md
+          test -f LICENSE
+          test -f SECURITY.md
